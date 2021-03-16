@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState } from 'react';
 import './App.css';
-import DateTimePretty from './components/DateTimePretty/DateTimePretty';
+import withPrettyDateTime from './components/DateTimePretty/DateTimePretty';
 
-const PrettyDateTime = DateTimePretty(DateTime);
+const DateTimePretty = withPrettyDateTime(DateTime);
 
 function DateTime(props) {
   return (
@@ -15,7 +15,7 @@ function Video(props) {
   return (
     <div className="video">
       <iframe src={props.url} frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-      <PrettyDateTime date={props.date} />
+      <DateTimePretty date={props.date} />
     </div>
   )
 }
